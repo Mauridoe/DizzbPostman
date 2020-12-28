@@ -1,10 +1,10 @@
 {
-  "name": "test_testing-example",
+  "name": "Dizzpostman",
   "version": "1.0.0",
-  "author": "Alejandro M. BERNARDIS",
-  "description": "Ejemplo para el despliegue automatizado de casos de prueba.",
+  "author": "Mauricio Rodirguez",
+  "description": "Api test",
   "scripts": {
-    "cases": "newman run cases/DizzbPostman.json --reporters cli,junit --reporter-junit-export output/output.xml"
+    "cases": "newman run cases/cases.json --reporters cli,junit --reporter-junit-export output/output.xml"
   },
   "dependencies": {
     "newman": "^5.2.1"
