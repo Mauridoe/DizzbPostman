@@ -1,0 +1,12 @@
+{
+  "name": "test_testing-example",
+  "version": "1.0.0",
+  "author": "Alejandro M. BERNARDIS",
+  "description": "Ejemplo para el despliegue automatizado de casos de prueba.",
+  "scripts": {
+    "cases": "newman run cases/DizzbPostman.json --reporters cli,junit --reporter-junit-export output/output.xml"
+  },
+  "dependencies": {
+    "newman": "^5.2.1"
+  }
+}
