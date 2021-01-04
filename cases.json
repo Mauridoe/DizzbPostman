@@ -1,0 +1,5116 @@
+{
+	"info": {
+		"_postman_id": "38cc0ce6-3c1b-42c4-8caf-7935d6dd1973",
+		"name": "Opratel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TESTSUITE Copy 2",
+			"item": [
+				{
+					"name": "ALL GETS",
+					"item": [
+						{
+							"name": "get menus paginate",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Menus Paginate\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/menus/paginate",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"menus",
+										"paginate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get providers",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Providers Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/filters/providers",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"filters",
+										"providers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get products",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Products Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/filters/products",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"filters",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get shortcodes",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Shortcodes Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/filters/shortcodes",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"filters",
+										"shortcodes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get menus",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Menus Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/menus",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"menus"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get menu",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Menu Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/menus/1",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"menus",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get menu items",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Menu Items Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/menu-items",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"menu-items"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get menu items paginate",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Menu items paginate Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/menu-items/paginate",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"menu-items",
+										"paginate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get menu item",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Menu item Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/menu-items/1",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"menu-items",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get roles",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Roles Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/roles",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get roles paginate",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Roles Paginate Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/roles/paginate",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"roles",
+										"paginate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get role",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Role Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/roles/3",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"roles",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get permissions",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Permissions Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/permissions",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"permissions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get permissions paginate",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Permissions Paginate Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/permissions/paginate",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"permissions",
+										"paginate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get permission",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Permission Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/permissions/1",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"permissions",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get users",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Users Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/users",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get User Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/users/1",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"users",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET users paginate",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get User Paginate Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/users/paginate",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"users",
+										"paginate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get user logued",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get User Logued Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/users/get-user-logued",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"users",
+										"get-user-logued"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get countries",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Counries Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/countries",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"countries"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get countries paginate",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Countries Paginate Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/countries/paginate",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"countries",
+										"paginate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get country",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Country Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/countries/1",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"countries",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get carrier policies",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Carrier Policies Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/carrier-policies/",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"carrier-policies",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get carrier policies paginate",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Carrier Policies Paginate Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/carrier-policies/paginate/",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"carrier-policies",
+										"paginate",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get providers",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Providers Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/providers/",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"providers",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get carriers",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Carrriers Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/filters/carriers",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"filters",
+										"carriers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get carrier policy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Carrier Policy Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/carrier-policies/",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"carrier-policies",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get providers paginate",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get providers paginate Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/providers/paginate/",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"providers",
+										"paginate",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get provider",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get provider Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/providers/",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"providers",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get shortcodes",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Shortcodes Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/shortcodes/",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"shortcodes",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get shortcodes paginate",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get shortcodes paginate Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/shortcodes/paginate/",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"shortcodes",
+										"paginate",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get shortcode",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get shortcode Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/shortcodes/paginate",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"shortcodes",
+										"paginate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get billing codes",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Billing Codes Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/billing-codes/",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"billing-codes",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get billing codes paginate",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Billing Codes Paginate Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/billing-codes/paginate/",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"billing-codes",
+										"paginate",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get billing code",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Billing Code Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/billing-codes/",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"billing-codes",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get products",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Products Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/products/",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"products",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get products paginate",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Products Paginate Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/products/paginate",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"products",
+										"paginate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get product",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Product Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/products/",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"products",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get product Keywords",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get product Keywords Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/product-keywords/",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"product-keywords",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get product keywords paginate",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Product Keywords Paginate Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/product-keywords/paginate/",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"product-keywords",
+										"paginate",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get product keyword",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Product Keyword Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/product-keywords/",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"product-keywords",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get messages",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Messages Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/messages/",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"messages",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get messages paginate",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Messages Paginate Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/messages/paginate/",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"messages",
+										"paginate",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get message",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Message Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/messages/",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"messages",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get blacklists",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Blacklists Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/blacklists",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"blacklists"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get blacklist paginate",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Blacklist Paginate Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/blacklists/paginate",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"blacklists",
+										"paginate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get blacklist",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Get Blacklist Exitoso\", function(){\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.sendRequest({\r",
+											"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+											"    method: 'POST',\r",
+											"    header: {\r",
+											"        'content-type': 'application/json'\r",
+											"    },\r",
+											"    body: {\r",
+											"        mode: 'raw',\r",
+											"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+											"\t                         \"password\": \"test-provider\" })\r",
+											"        \r",
+											"    }\r",
+											"}, function (err, res) {\r",
+											"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://qa.dizzb.com:9001/api/v1/services/blacklists/",
+									"protocol": "http",
+									"host": [
+										"qa",
+										"dizzb",
+										"com"
+									],
+									"port": "9001",
+									"path": [
+										"api",
+										"v1",
+										"services",
+										"blacklists",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Carga de insumos",
+					"item": [
+						{
+							"name": "Providers",
+							"item": [
+								{
+									"name": "Create provider",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Create Provider Exitoso\", function(){\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-type': 'application/json'\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+													"\t                         \"password\": \"test-provider\" })\r",
+													"        \r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{TOKEN}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"providerName\": \"DizzBTestProvider\",\r\n    \"providerNotificationEndpoint\": \"DizzBTestProvider\",\r\n\t  \"carrierId\": 1,\r\n    \"providerEnabled\": 1\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://qa.dizzb.com:9001/api/v1/services/providers",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"dizzb",
+												"com"
+											],
+											"port": "9001",
+											"path": [
+												"api",
+												"v1",
+												"services",
+												"providers"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Shortcodes",
+							"item": [
+								{
+									"name": "Create Shortcode",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Create Shortcode Exitoso\", function(){\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-type': 'application/json'\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+													"\t                         \"password\": \"test-provider\" })\r",
+													"        \r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{TOKEN}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"shortcode\": \"202020\",\r\n  \"shortcodeRelation\": 1,\r\n  \"shortcodeType\": \"free\",\r\n\t\"providerId\": 1,\r\n  \"shortcodeEnabled\": 1\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://qa.dizzb.com:9001/api/v1/services/shortcodes",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"dizzb",
+												"com"
+											],
+											"port": "9001",
+											"path": [
+												"api",
+												"v1",
+												"services",
+												"shortcodes"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Billing codes",
+							"item": [
+								{
+									"name": "Create billing code",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Create Billing Code Exitoso\", function(){\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-type': 'application/json'\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+													"\t                         \"password\": \"test-provider\" })\r",
+													"        \r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{TOKEN}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"billingCode\": null,\r\n  \"billingCodePrice\": 999,\r\n  \"billingType\": \"mt\",\r\n\t\"shortcodeId\": 2,\r\n  \"billingCodeEnabled\": 1\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://qa.dizzb.com:9001/api/v1/services/billing-codes",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"dizzb",
+												"com"
+											],
+											"port": "9001",
+											"path": [
+												"api",
+												"v1",
+												"services",
+												"billing-codes"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Products",
+							"item": [
+								{
+									"name": "Create product",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Create Product Exitoso\", function(){\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-type': 'application/json'\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+													"\t                         \"password\": \"test-provider\" })\r",
+													"        \r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{TOKEN}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"productName\": \"DizzBTest\",\r\n  \"productPeriodicity\": 7,\r\n  \"productQuietTimeEnabled\": 1,\r\n  \"providerId\": 3,\r\n  \"shortcodeId\": 7,\r\n  \"productEnabled\": 1\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://qa.dizzb.com:9001/api/v1/services/products",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"dizzb",
+												"com"
+											],
+											"port": "9001",
+											"path": [
+												"api",
+												"v1",
+												"services",
+												"products"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Product Keywords",
+							"item": [
+								{
+									"name": "Create product keyword",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Create Product Keyword Exitoso\", function(){\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-type': 'application/json'\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+													"\t                         \"password\": \"test-provider\" })\r",
+													"        \r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{TOKEN}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"productKeyword\": \"%'MauTest19102020'%\",\r\n  \"productKeywordType\": \"optin\",\r\n\t\"productId\": 1,\r\n  \"productKeywordEnabled\": 1\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://qa.dizzb.com:9001/api/v1/services/product-keywords",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"dizzb",
+												"com"
+											],
+											"port": "9001",
+											"path": [
+												"api",
+												"v1",
+												"services",
+												"product-keywords"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Messages",
+							"item": [
+								{
+									"name": "Create Message",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Create Message Exitoso\", function(){\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-type': 'application/json'\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+													"\t                         \"password\": \"test-provider\" })\r",
+													"        \r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{TOKEN}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"message\": \"te%!-'st\",\r\n  \"messageType\": \"subscription\",\r\n\t\"productId\": 1,\r\n  \"messageEnabled\": 1\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://qa.dizzb.com:9001/api/v1/services/messages",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"dizzb",
+												"com"
+											],
+											"port": "9001",
+											"path": [
+												"api",
+												"v1",
+												"services",
+												"messages"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Carriers",
+							"item": [
+								{
+									"name": "Create Carrier",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Create Carrier Exitoso\", function(){\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-type': 'application/json'\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+													"\t                         \"password\": \"test-provider\" })\r",
+													"        \r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{TOKEN}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"carrierName\": \"Wom22\",\r\n\t\"countryId\": 1,\r\n  \"carrierEnabled\": 1\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://qa.dizzb.com:9001/api/v1/services/carriers",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"dizzb",
+												"com"
+											],
+											"port": "9001",
+											"path": [
+												"api",
+												"v1",
+												"services",
+												"carriers"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Carrier Policies",
+							"item": [
+								{
+									"name": "Create carrier policy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Create Carrier Policy Exitoso\", function(){\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-type': 'application/json'\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+													"\t                         \"password\": \"test-provider\" })\r",
+													"        \r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{TOKEN}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\t\"carrierId\": 1,\r\n    \"carrierPolicyType\": \"auto_unsub_uncharged_users\",\r\n    \"carrierPolicyDescription\": \"-**/#!\",\r\n    \"carrierPolicyValue\": \"-**/#!\",\r\n    \"carrierPolicyEnabled\": 1 \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://qa.dizzb.com:9001/api/v1/services/carrier-policies",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"dizzb",
+												"com"
+											],
+											"port": "9001",
+											"path": [
+												"api",
+												"v1",
+												"services",
+												"carrier-policies"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "menus",
+							"item": []
+						},
+						{
+							"name": "menu items",
+							"item": [
+								{
+									"name": "create menu item",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Create Menu Item Exitoso\", function(){\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-type': 'application/json'\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+													"\t                         \"password\": \"test-provider\" })\r",
+													"        \r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{TOKEN}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"menuId\": 2,\r\n\t\"menuItemTitle\": \"test numero 55\",\r\n\t\"menuItemIcon\": null,\r\n\t\"menuItemExtraClasses\": null,\r\n\t\"menuItemParentId\": null,\r\n\t\"menuItemPriority\": 2,\r\n\t\"menuItemUrl\": \"roles 3\",\r\n\t\"permissionId\": 5,\r\n\t\"menuItemEnabled\": 1\r\n}\t",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://qa.dizzb.com:9001/api/v1/services/menu-items",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"dizzb",
+												"com"
+											],
+											"port": "9001",
+											"path": [
+												"api",
+												"v1",
+												"services",
+												"menu-items"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "permissions",
+							"item": [
+								{
+									"name": "create permission",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Create Permission Exitoso\", function(){\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-type': 'application/json'\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+													"\t                         \"password\": \"test-provider\" })\r",
+													"        \r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{TOKEN}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"permissionName\": \"api test name\",\r\n\t\"permissionEnabled\": 1\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://qa.dizzb.com:9001/api/v1/services/permissions",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"dizzb",
+												"com"
+											],
+											"port": "9001",
+											"path": [
+												"api",
+												"v1",
+												"services",
+												"permissions"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "roles",
+							"item": [
+								{
+									"name": "create role",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Create Role Exitoso\", function(){\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-type': 'application/json'\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+													"\t                         \"password\": \"test-provider\" })\r",
+													"        \r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{TOKEN}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"roleName\": \"admin 2\",\r\n\t\"roleEnabled\": 1\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://qa.dizzb.com:9001/api/v1/services/roles",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"dizzb",
+												"com"
+											],
+											"port": "9001",
+											"path": [
+												"api",
+												"v1",
+												"services",
+												"roles"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"auth": {
+								"type": "bearer",
+								"bearer": [
+									{
+										"key": "token",
+										"value": "{{temp_token}}",
+										"type": "string"
+									}
+								]
+							}
+						},
+						{
+							"name": "Countries",
+							"item": [
+								{
+									"name": "Create Country",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Create Country Exitoso\", function(){\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-type': 'application/json'\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+													"\t                         \"password\": \"test-provider\" })\r",
+													"        \r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{TOKEN}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"countryName\": \"Argentina2\",\r\n  \"countryShort\": \"AR\",\r\n  \"countryCurrency\": \"ARS\",\r\n  \"countryCurrencyExchange\": 760.5,\r\n  \"countryEnabled\": 1\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://qa.dizzb.com:9001/api/v1/services/countries",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"dizzb",
+												"com"
+											],
+											"port": "9001",
+											"path": [
+												"api",
+												"v1",
+												"services",
+												"countries"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Monitor Users",
+							"item": [
+								{
+									"name": "Get subscriptions",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Get Subscriptions Exitoso\", function(){\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-type': 'application/json'\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+													"\t                         \"password\": \"test-provider\" })\r",
+													"        \r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{TOKEN}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"carrierId\": \"1\",\r\n\t\"msisdn\": \"5692028/*-*/$#%''\",\r\n\t\"providerId\": []\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://qa.dizzb.com:9001/api/v1/services/monitor-users/subscriptions",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"dizzb",
+												"com"
+											],
+											"port": "9001",
+											"path": [
+												"api",
+												"v1",
+												"services",
+												"monitor-users",
+												"subscriptions"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get providers",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Get Providers Exitoso\", function(){\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-type': 'application/json'\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+													"\t                         \"password\": \"test-provider\" })\r",
+													"        \r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{TOKEN}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"outgoingMsisdn\": \"5692028/*-*/$#%''\",\r\n\t\"providerId\": [],\r\n\t\"carrierId\": 1\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://qa.dizzb.com:9001/api/v1/services/monitor-users/providers",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"dizzb",
+												"com"
+											],
+											"port": "9001",
+											"path": [
+												"api",
+												"v1",
+												"services",
+												"monitor-users",
+												"providers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get messages",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Get Messages Exitoso\", function(){\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-type': 'application/json'\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+													"\t                         \"password\": \"test-provider\" })\r",
+													"        \r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{TOKEN}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"page\": 4,\r\n\t\"limit\": 50,\r\n\t\"carrierId\" :\"1\",\r\n\t\"msisdn\": \"56949549921-*/$\",\r\n\t\"providerId\": [1],\r\n\t\"shortcodeId\": null,\r\n\t\"productId\": null\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://qa.dizzb.com:9001/api/v1/services/monitor-users/messages",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"dizzb",
+												"com"
+											],
+											"port": "9001",
+											"path": [
+												"api",
+												"v1",
+												"services",
+												"monitor-users",
+												"messages"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Export messages",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Export Messages Exitoso\", function(){\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-type': 'application/json'\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+													"\t                         \"password\": \"test-provider\" })\r",
+													"        \r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{TOKEN}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"carrierId\" :\"1\",\r\n\t\"msisdn\": \"56920297178-*//*\",\r\n\t\"providerId\": [],\r\n\t\"shortcodeId\": null,\r\n\t\"productId\": null,\r\n\t\"createdAt\": {\r\n\t\t\"startDate\": \"2020-06-07\",\r\n\t\t\"endDate\": \"2020-07-07\"\r\n\t},\r\n\t\"processAt\": {\r\n\t\t\"startDate\": \"2020-06-07\",\r\n\t\t\"endDate\": \"2020-07-07\"\r\n\t},\r\n\t\"processedAt\": {\r\n\t\t\"startDate\": \"2020-06-07\",\r\n\t\t\"endDate\": \"2020-07-07\"\r\n\t}\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://qa.dizzb.com:9001/api/v1/services/monitor-users/messages/export",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"dizzb",
+												"com"
+											],
+											"port": "9001",
+											"path": [
+												"api",
+												"v1",
+												"services",
+												"monitor-users",
+												"messages",
+												"export"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Subscriptions history",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Get Subscriptions history Exitoso\", function(){\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-type': 'application/json'\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+													"\t                         \"password\": \"test-provider\" })\r",
+													"        \r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{TOKEN}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"subscriptionMsisdn\": \"56920005853/*-\",\r\n    \"carrierId\": \"1\",\r\n    \"providerId\": [1],\r\n\t  \"shortcodeId\": \"1\",\r\n\t\t\"productId\": \"1\",\r\n    \"mdsId\": \"\",\r\n    \"subscriptionStatus\": \"0\",\r\n    \"subscriptionCreatedAt\": {\r\n\t\t\t\"startDate\": \"2020-06-26\",\r\n\t\t\t\"endDate\": \"2020-06-26\"\r\n\t\t},\r\n    \"subscriptionLastChargeAt\": {\r\n\t\t\t\"startDate\": \"2020-06-26\",\r\n\t\t\t\"endDate\": \"2020-06-26\"\r\n\t\t},\r\n    \"subscriptionNextChargeAt\":{\r\n\t\t\t\"startDate\": \"2020-06-26\",\r\n\t\t\t\"endDate\": \"2020-06-26\"\r\n\t\t},\r\n    \"subscriptionDeactivatedAt\":{\r\n\t\t\t\"startDate\": \"2020-06-26\",\r\n\t\t\t\"endDate\": \"2020-06-26\"\r\n\t\t},\r\n    \"subscriptionDeactivatedBy\": \"ma\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://qa.dizzb.com:9001/api/v1/services/monitor-users/subscriptions-history",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"dizzb",
+												"com"
+											],
+											"port": "9001",
+											"path": [
+												"api",
+												"v1",
+												"services",
+												"monitor-users",
+												"subscriptions-history"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Export subscriptions history",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Export subscriptions history Exitoso\", function(){\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-type': 'application/json'\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+													"\t                         \"password\": \"test-provider\" })\r",
+													"        \r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{TOKEN}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"subscriptionMsisdn\": \"56911223345/*-*/\",\r\n    \"carrierId\": \"1\",\r\n    \"providerId\": [8],\r\n\t  \"shortcodeId\": \"5\",\r\n\t\t\"productId\": \"2\",\r\n    \"mdsId\": \"\",\r\n\t\t\"subscriptionStatus\": \"1\",\r\n    \"subscriptionCreatedAt\": {\r\n\t\t\t\"startDate\": \"2020-06-26\",\r\n\t\t\t\"endDate\": \"2020-08-26\"\r\n\t\t},\r\n    \"subscriptionLastChargeAt\": {\r\n\t\t\t\"startDate\": \"2020-06-26\",\r\n\t\t\t\"endDate\": \"2020-08-26\"\r\n\t\t},\r\n    \"subscriptionNextChargeAt\":{\r\n\t\t\t\"startDate\": \"2020-06-26\",\r\n\t\t\t\"endDate\": \"2020-08-26\"\r\n\t\t},\r\n\t  \"subscriptionDeactivatedAt\": {},\r\n    \"subscriptionDeactivatedBy\": \"ma\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://qa.dizzb.com:9001/api/v1/services/monitor-users/subscriptions-history/export",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"dizzb",
+												"com"
+											],
+											"port": "9001",
+											"path": [
+												"api",
+												"v1",
+												"services",
+												"monitor-users",
+												"subscriptions-history",
+												"export"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get presubscriptions",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Get Presubscriptions Exitoso\", function(){\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-type': 'application/json'\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+													"\t                         \"password\": \"test-provider\" })\r",
+													"        \r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{TOKEN}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"carrierId\": \"1\",\r\n\t\"msisdn\": \"56911223345/*-/$%\",\r\n\t\"providerId\": [5]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://qa.dizzb.com:9001/api/v1/services/monitor-users/presubscriptions",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"dizzb",
+												"com"
+											],
+											"port": "9001",
+											"path": [
+												"api",
+												"v1",
+												"services",
+												"monitor-users",
+												"presubscriptions"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create blacklist",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Create Blacklist Exitoso\", function(){\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.sendRequest({\r",
+													"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
+													"    method: 'POST',\r",
+													"    header: {\r",
+													"        'content-type': 'application/json'\r",
+													"    },\r",
+													"    body: {\r",
+													"        mode: 'raw',\r",
+													"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
+													"\t                         \"password\": \"test-provider\" })\r",
+													"        \r",
+													"    }\r",
+													"}, function (err, res) {\r",
+													"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{TOKEN}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"blacklistMsisdn\": \"54112254/*-#$%\",\r\n\t\"blacklistExpireDate\": \"2020-08-31\",\r\n  \"carrierId\": 1\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://qa.dizzb.com:9001/api/v1/services/monitor-users/blacklist-add",
+											"protocol": "http",
+											"host": [
+												"qa",
+												"dizzb",
+												"com"
+											],
+											"port": "9001",
+											"path": [
+												"api",
+												"v1",
+												"services",
+												"monitor-users",
+												"blacklist-add"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
