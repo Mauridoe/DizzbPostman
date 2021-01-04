@@ -4101,88 +4101,7 @@
 						},
 						{
 							"name": "menus",
-							"item": [
-								{
-									"name": "post menu",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"pm.test(\"Post Menu Exitoso\", function(){\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
-													""
-												],
-												"type": "text/javascript"
-											}
-										},
-										{
-											"listen": "prerequest",
-											"script": {
-												"exec": [
-													"pm.sendRequest({\r",
-													"    url: \"http://qa.dizzb.com:9001/api/v1/auth-services/auth/login\",\r",
-													"    method: 'POST',\r",
-													"    header: {\r",
-													"        'content-type': 'application/json'\r",
-													"    },\r",
-													"    body: {\r",
-													"        mode: 'raw',\r",
-													"        raw: JSON.stringify({\"username\": \"test-provider\",\r",
-													"\t                         \"password\": \"test-provider\" })\r",
-													"        \r",
-													"    }\r",
-													"}, function (err, res) {\r",
-													"    pm.environment.set(\"TOKEN\",  res.json()._token);\r",
-													"});"
-												],
-												"type": "text/javascript"
-											}
-										}
-									],
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": [
-												{
-													"key": "token",
-													"value": "{{TOKEN}}",
-													"type": "string"
-												}
-											]
-										},
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n\t\"menuName\": \"check27102020\",\r\n\t\"menuDescription\": \"description optional\",\r\n\t\"menuEnabled\": 1\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "http://qa.dizzb.com:9001/api/v1/services/menus",
-											"protocol": "http",
-											"host": [
-												"qa",
-												"dizzb",
-												"com"
-											],
-											"port": "9001",
-											"path": [
-												"api",
-												"v1",
-												"services",
-												"menus"
-											]
-										}
-									},
-									"response": []
-								}
-							]
+							"item": []
 						},
 						{
 							"name": "menu items",
@@ -4326,7 +4245,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n\t\"permissionName\": \"monitor.messages\",\r\n\t\"permissionEnabled\": 1\r\n}",
+											"raw": "{\r\n\t\"permissionName\": \"api test name\",\r\n\t\"permissionEnabled\": 1\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
