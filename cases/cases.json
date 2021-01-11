@@ -3476,7 +3476,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"providerName\": \"DizzBTestProvider\",\r\n    \"providerNotificationEndpoint\": \"DizzBTestProvider\",\r\n\t  \"carrierId\": 1,\r\n    \"providerEnabled\": 1\r\n}",
+											"raw": "{\r\n    \"providerName\": \"JenkinsProvider\",\r\n    \"providerNotificationEndpoint\": \"DizzBTestProvider\",\r\n\t  \"carrierId\": 1,\r\n    \"providerEnabled\": 1\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -3561,7 +3561,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n  \"shortcode\": \"202020\",\r\n  \"shortcodeRelation\": 1,\r\n  \"shortcodeType\": \"free\",\r\n\t\"providerId\": 1,\r\n  \"shortcodeEnabled\": 1\r\n}",
+											"raw": "{\r\n  \"shortcode\": \"212121\",\r\n  \"shortcodeRelation\": 1,\r\n  \"shortcodeType\": \"free\",\r\n\t\"providerId\": 1,\r\n  \"shortcodeEnabled\": 1\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -3731,7 +3731,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n  \"productName\": \"DizzBTest\",\r\n  \"productPeriodicity\": 7,\r\n  \"productQuietTimeEnabled\": 1,\r\n  \"providerId\": 3,\r\n  \"shortcodeId\": 7,\r\n  \"productEnabled\": 1\r\n}",
+											"raw": "{\r\n  \"productName\": \"JenkinsProduct\",\r\n  \"productPeriodicity\": 7,\r\n  \"productQuietTimeEnabled\": 1,\r\n  \"providerId\": 3,\r\n  \"shortcodeId\": 7,\r\n  \"productEnabled\": 1\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -3816,7 +3816,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n  \"productKeyword\": \"%'MauTest19102020'%\",\r\n  \"productKeywordType\": \"optin\",\r\n\t\"productId\": 1,\r\n  \"productKeywordEnabled\": 1\r\n}",
+											"raw": "{\r\n  \"productKeyword\": \"JenkinsProductKey\",\r\n  \"productKeywordType\": \"optin\",\r\n\t\"productId\": 1,\r\n  \"productKeywordEnabled\": 1\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -3901,7 +3901,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n  \"message\": \"te%!-'st\",\r\n  \"messageType\": \"subscription\",\r\n\t\"productId\": 1,\r\n  \"messageEnabled\": 1\r\n}",
+											"raw": "{\r\n  \"message\": \"Jenkins Message\",\r\n  \"messageType\": \"subscription\",\r\n\t\"productId\": 1,\r\n  \"messageEnabled\": 1\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -3986,7 +3986,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n  \"carrierName\": \"Wom22\",\r\n\t\"countryId\": 1,\r\n  \"carrierEnabled\": 1\r\n}",
+											"raw": "{\r\n  \"carrierName\": \"Jenkins Automation\",\r\n\t\"countryId\": 1,\r\n  \"carrierEnabled\": 1\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -4071,7 +4071,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n\t\t\"carrierId\": 1,\r\n    \"carrierPolicyType\": \"auto_unsub_uncharged_users\",\r\n    \"carrierPolicyDescription\": \"-**/#!\",\r\n    \"carrierPolicyValue\": \"-**/#!\",\r\n    \"carrierPolicyEnabled\": 1 \r\n}",
+											"raw": "{\r\n\t\t\"carrierId\": 1,\r\n    \"carrierPolicyType\": \"auto_unsub_uncharged_users\",\r\n    \"carrierPolicyDescription\": \"JenkinsDescription\",\r\n    \"carrierPolicyValue\": \"JenkinsValue\",\r\n    \"carrierPolicyEnabled\": 1 \r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -4164,7 +4164,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n\t\"permissionName\": \"api test name\",\r\n\t\"permissionEnabled\": 1\r\n}",
+											"raw": "{\r\n\t\"permissionName\": \"JenkinsPermission\",\r\n\t\"permissionEnabled\": 1\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -4249,7 +4249,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n\t\"roleName\": \"admin 2\",\r\n\t\"roleEnabled\": 1\r\n}",
+											"raw": "{\r\n\t\"roleName\": \"Jenkins Role\",\r\n\t\"roleEnabled\": 1\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -4344,7 +4344,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n  \"countryName\": \"Argentina2\",\r\n  \"countryShort\": \"AR\",\r\n  \"countryCurrency\": \"ARS\",\r\n  \"countryCurrencyExchange\": 760.5,\r\n  \"countryEnabled\": 1\r\n}",
+											"raw": "{\r\n  \"countryName\": \"Jenkins Nation\",\r\n  \"countryShort\": \"AR\",\r\n  \"countryCurrency\": \"ARS\",\r\n  \"countryCurrencyExchange\": 760.5,\r\n  \"countryEnabled\": 1\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -4429,7 +4429,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n\t\"carrierId\": \"1\",\r\n\t\"msisdn\": \"5692028/*-*/$#%''\",\r\n\t\"providerId\": []\r\n}",
+											"raw": "{\r\n\t\"carrierId\": \"1\",\r\n\t\"msisdn\": \"5692028Jenkins\",\r\n\t\"providerId\": []\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -4510,7 +4510,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n\t\"outgoingMsisdn\": \"5692028/*-*/$#%''\",\r\n\t\"providerId\": [],\r\n\t\"carrierId\": 1\r\n}",
+											"raw": "{\r\n\t\"outgoingMsisdn\": \"5692028Jenkins\",\r\n\t\"providerId\": [],\r\n\t\"carrierId\": 1\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
